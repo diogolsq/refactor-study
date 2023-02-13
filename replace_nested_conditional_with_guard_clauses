@@ -1,0 +1,25 @@
+// original code
+function calculateDiscount(price, loyaltyPoints, minimumSpend) {
+  if (price < minimumSpend) {
+    return 0;
+  }
+  
+  if (loyaltyPoints >= 100) {
+    return price * 0.1;
+  } else {
+    return price * 0.05;
+  }
+}
+
+
+// refactored code
+function calculateDiscount(price, loyaltyPoints, minimumSpend) {
+
+    if(price < minimumSpend) {
+        return 0;
+    }
+    if (loyaltyPoints < 100) {
+        return price * 0.05;
+    }
+    return price * 0.1;
+}
